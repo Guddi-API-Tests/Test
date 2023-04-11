@@ -28,9 +28,18 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: gh pr checkout ${{ github.event.pull_request.number}}
     - name: Run Code-Generator
-      run: datamodel-codegen
+      run: | 
+        datamodel-codegen
+        changes=$(git diff --name-only)
+        number=$(echo "$changes" | wc -l)
+        if [[ number -lt 2 ]]; then
+          echo "Git diff has less than 2 changes"
+          exit 0
+        else
+           echo "Git diff has $number changes"
+        fi
     - name: Commit & Push Changes
-      env: 
+      env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name 'Datamodel-Code-Generator'

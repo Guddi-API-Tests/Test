@@ -34,7 +34,7 @@ jobs:
         number=$(echo "$changes" | wc -l)
         if [[ $number -lt 2 ]]; then
           echo "Git diff has less than 2 changes"
-          echo "Changes: $changes"
+          echo "Changes: $changes ($number)"
           echo "has_changes=false" >> $GITHUB_OUTPUT
         else
           echo "Git diff has $number changes"

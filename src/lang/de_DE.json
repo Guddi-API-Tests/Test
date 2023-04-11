@@ -3,7 +3,7 @@
     "langName": "Deutsch",
     "commands": {
         "help": {
-            "name": "test",
+            "name": "hilfe",
             "description": "Erhalte Hilfe zum Bot",
             "replyEmbed": {
                 "title": "{bot.user.name} - Hilfe",

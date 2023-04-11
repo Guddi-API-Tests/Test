@@ -11,13 +11,13 @@
             },
             "misc": {
                 "thing": "thing",
-                "this": "this",
-                "misc": "misc"
+                "this": "this"
             }
         },
         "info": {
             "name": "information",
             "description": "Alle wichtigen Infos über den Bot.",
+            "something": "whatever",
             "replyEmbed": {
                 "title": "Informationen über {bot.user.name}",
                 "description": "Mit {bot.user.name} könnt ihr das Banner-System für den aktivsten User auch auf eurem Server verwenden.",

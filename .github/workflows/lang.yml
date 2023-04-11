@@ -34,11 +34,11 @@ jobs:
         number=$(echo "$changes" | wc -l)
         if [[ number -lt 2 ]]; then
           echo "Git diff has less than 2 changes"
-          exit 0
         else
            echo "Git diff has $number changes"
         fi
     - name: Commit & Push Changes
+      if: [[ number -lt 2 ]]
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |

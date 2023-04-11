@@ -32,7 +32,7 @@ jobs:
         datamodel-codegen
         changes=$(git diff --name-only)
         number=$(echo "$changes" | wc -l)
-        if [[ number -lt 2 ]]; then
+        if [[ $number -lt 2 ]]; then
           echo "Git diff has less than 2 changes"
         else
            echo "Git diff has $number changes"

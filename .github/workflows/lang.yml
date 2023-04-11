@@ -34,10 +34,10 @@ jobs:
         number=$(echo "$changes" | wc -l)
         if [[ $number -lt 2 ]]; then
           echo "Git diff has less than 2 changes"
-          echo "::set-output name=has_changes::false"
+          echo "has_changes=false" >> $GITHUB_OUTPUT
         else
           echo "Git diff has $number changes"
-          echo "::set-output name=has_changes::true"
+          echo "has_changes=true" >> $GITHUB_OUTPUT
         fi
     - name: Commit & Push Changes
       if: ${{ steps.build.outputs.has_changes == 'true' }}

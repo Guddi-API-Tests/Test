@@ -11,7 +11,8 @@
             },
             "misc": {
                 "test": "test",
-                "thing": "thing"
+                "thing": "thing",
+                "this": "this"
             }
         },
         "info": {

@@ -11,11 +11,12 @@
             },
             "misc": {
                 "test": "test",
-                "thing": "thing"
+                "thing": "thing",
+                "this": "this"
             }
         },
         "info": {
-            "name": "info",
+            "name": "information",
             "description": "Alle wichtigen Infos über den Bot.",
             "replyEmbed": {
                 "title": "Informationen über {bot.user.name}",

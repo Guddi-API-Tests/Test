@@ -38,7 +38,7 @@ jobs:
            echo "Git diff has $number changes"
         fi
     - name: Commit & Push Changes
-      if: [[ number -lt 2 ]]
+      if: [[ $number -lt 2 ]]
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |

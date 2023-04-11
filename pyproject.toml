@@ -1,0 +1,7 @@
+[tool.datamodel-codegen]
+input = "src/lang/de_DE.json"
+input-file-type = "json"
+output = "src/models/translations.py"
+class-name = "TranslationsModel"
+target-python-version = "3.10"
+base-class="models.model_base.BaseModel"

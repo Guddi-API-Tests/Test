@@ -28,7 +28,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: gh pr checkout ${{ github.event.pull_request.number}}
     - name: Run Code-Generator
-      run: datamodel-code-gen
+      run: datamodel-codegen
     - name: Push Changes
       env: 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

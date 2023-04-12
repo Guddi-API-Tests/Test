@@ -29,7 +29,7 @@ jobs:
       run: gh pr checkout ${{ github.event.pull_request.number}}
     - name: Run Code-Generator
       run: | 
-        RESULT=$(python test.py)
+        RESULT=$(python datamodel.py)
         echo "Python result:"
         echo $RESULT
         if [[ RESULT ]]; then

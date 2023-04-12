@@ -48,7 +48,7 @@ def main():
             files.append(f'{filename}\n\t{file_diff}\n')
     if files:
         files_text = '\n'.join(files)
-        return f'### Found Differences in the following files:\n{files_text}'
+        return rf'### Found Differences in the following files:\n{files_text}'
     else:
         return None
 

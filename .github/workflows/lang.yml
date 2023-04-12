@@ -44,7 +44,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo ${{ steps.build.outputs.has_changes }}
+        echo "this" 
+        echo $steps.build.outputs.has_changes
 #        git config --global user.name 'Datamodel-Code-Generator'
 #        git config --global user.email 'your-username@users.noreply.github.com'
 #        git commit -am "datamodel-code-generator"

@@ -31,9 +31,9 @@ jobs:
       run: | 
         RESULT=$(python lang_files_diff.py)
         echo "Python result: $RESULT"
-        echo "are_the_same=$RESULT" >> $GITHUB_OUTPUT
+        echo "message=$RESULT" >> $GITHUB_OUTPUT
     - name: Comment PR
       uses: mshick/add-pr-comment@v2
-      if: ${{ steps.run_code_gen.outputs.has_changes != 'None' }}
+      if: ${{ steps.run_code_gen.outputs.message != 'None' }}
       with:
-        message: ${{ steps.run_code_gen.outputs.has_changes }}
+        message: ${{ steps.run_code_gen.outputs.message }}

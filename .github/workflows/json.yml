@@ -32,9 +32,9 @@ jobs:
         RESULT=$(python lang_files_diff.py)
         echo "Python result: $RESULT"
         echo "message=$RESULT" >> $GITHUB_OUTPUT
-        exit 1
+        if RESULT != 'None'; then exit 1; fi
     - name: Comment PR
       uses: mshick/add-pr-comment@v2
-      if: ${{ steps.find_json_diff.outputs.message != 'None' }}
+      if: failure()
       with:
         message: ${{ steps.find_json_diff.outputs.message }}

@@ -21,7 +21,6 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-#        pip install json-diff-oder-sowas-vlt
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Checkout PR
       env:
@@ -33,12 +32,3 @@ jobs:
         RESULT=$(python lang_file_diff.py)
         echo "Python result: $RESULT"
         echo "are_the_same=$RESULT" >> $GITHUB_OUTPUT
-#    - name: Commit & Push Changes
-#      if: ${{ steps.run_code_gen.outputs.are_the_same == 'True' }}
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#      run: |
-#        git config --global user.name 'Datamodel-Code-Generator'
-#        git config --global user.email 'your-username@users.noreply.github.com'
-#        git commit -am "datamodel-code-generator"
-#        git push

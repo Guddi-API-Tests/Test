@@ -28,25 +28,19 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: gh pr checkout ${{ github.event.pull_request.number}}
     - name: Run Code-Generator
+      id: run_code_gen
       run: | 
         RESULT=$(python datamodel.py)
         echo "Python result:"
         echo $RESULT
-        if [[ RESULT ]]; then
-          echo "Changes: $RESULT"
-          echo "has_changes=true" >> $GITHUB_OUTPUT
-        else
-          echo "Nothing Changed"
-          echo "has_changes=false" >> $GITHUB_OUTPUT
-        fi
+        echo "has_changes=$RESULT" >> $GITHUB_OUTPUT
     - name: Commit & Push Changes
 #      if: ${{ steps.build.outputs.has_changes == 'true' }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo "this" 
-        echo $steps.build.outputs.has_changes
-        echo "result: $RESULT"
+        echo ${{steps.run_code_gen.outputs.has_changes}}
 #        git config --global user.name 'Datamodel-Code-Generator'
 #        git config --global user.email 'your-username@users.noreply.github.com'
 #        git commit -am "datamodel-code-generator"

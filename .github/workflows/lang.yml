@@ -34,10 +34,10 @@ jobs:
         echo $RESULT
         if [[ RESULT ]]; then
           echo "Changes: $RESULT"
-          echo "has_changes=false" >> $GITHUB_OUTPUT
+          echo "has_changes=true" >> $GITHUB_OUTPUT
         else
           echo "Nothing Changed"
-          echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "has_changes=false" >> $GITHUB_OUTPUT
         fi
     - name: Commit & Push Changes
       if: ${{ steps.build.outputs.has_changes == 'true' }}

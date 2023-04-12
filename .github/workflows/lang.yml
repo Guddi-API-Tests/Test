@@ -28,17 +28,14 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: gh pr checkout ${{ github.event.pull_request.number}}
     - name: Run Code-Generator
+      id: run_code_gen
       run: | 
-        datamodel-codegen
-        changes=$(git diff --name-only)
-        number=$(echo "$changes" | wc -l)
-        if [[ number -lt 2 ]]; then
-          echo "Git diff has less than 2 changes"
-        else
-           echo "Git diff has $number changes"
-        fi
+        RESULT=$(python datamodel.py)
+        echo "Python result: $RESULT"
+        echo $RESULT
+        echo "has_changes=$RESULT" >> $GITHUB_OUTPUT
     - name: Commit & Push Changes
-      if: [[ number -lt 2 ]]
+      if: ${{ steps.run_code_gen.outputs.has_changes == 'True' }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |

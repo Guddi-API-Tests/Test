@@ -1,4 +1,4 @@
-name: Check-Lang-Files-Diffs
+name: Check Lang Files Diff
 
 on:
   pull_request:

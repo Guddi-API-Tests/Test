@@ -10,14 +10,15 @@
                 "description": "Danke dass du {bot.user.name} benutzt!\nWähle im Menü unten eine Funktion aus um fortzufahren.\n\nDu möchtest bestimmte Funktionen haben? Dann schlag es beim Support-Server einfach vor!\n\n__Nützliche Links:__\n[Lade mich ein!]({bot.bot_invite})\n[Support Server]({bot.support_invite})\n\n__Unsere Partner__:\nTritt unserem [Netzwerk Server](https://discord.gg/Ks3szzP) bei!\nLade den Bot [GZ Global](https://discord.com/api/oauth2/authorize?client_id=702535364325146645&permissions=8&scope=bot%20applications.commands) ein."
             },
             "misc": {
-                "test": "test",
-                "thing": "thing",
-                "this": "this"
+                "thing": "lol",
+                "this": "lul",
+                "that": "lel"
             }
         },
         "info": {
             "name": "information",
             "description": "Alle wichtigen Infos über den Bot.",
+            "something": "whatever",
             "replyEmbed": {
                 "title": "Informationen über {bot.user.name}",
                 "description": "Mit {bot.user.name} könnt ihr das Banner-System für den aktivsten User auch auf eurem Server verwenden.",

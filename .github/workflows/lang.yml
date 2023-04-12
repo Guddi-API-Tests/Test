@@ -40,11 +40,12 @@ jobs:
           echo "has_changes=false" >> $GITHUB_OUTPUT
         fi
     - name: Commit & Push Changes
-      if: ${{ steps.build.outputs.has_changes == 'true' }}
+#      if: ${{ steps.build.outputs.has_changes == 'true' }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git config --global user.name 'Datamodel-Code-Generator'
-        git config --global user.email 'your-username@users.noreply.github.com'
-        git commit -am "datamodel-code-generator"
-        git push
+        echo ${{ steps.build.outputs.has_changes }}
+#        git config --global user.name 'Datamodel-Code-Generator'
+#        git config --global user.email 'your-username@users.noreply.github.com'
+#        git commit -am "datamodel-code-generator"
+#        git push

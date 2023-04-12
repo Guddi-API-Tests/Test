@@ -46,6 +46,7 @@ jobs:
       run: |
         echo "this" 
         echo $steps.build.outputs.has_changes
+        echo "result: $RESULT"
 #        git config --global user.name 'Datamodel-Code-Generator'
 #        git config --global user.email 'your-username@users.noreply.github.com'
 #        git commit -am "datamodel-code-generator"

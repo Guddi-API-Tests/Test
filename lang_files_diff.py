@@ -44,8 +44,8 @@ def main():
             file_diff.append(f'{key}: {format_keys(value)}')
         if file_diff:
             file_diff = r'\n\t'.join(file_diff)
-            # files.append(f'\n<details>\n\t<summary>{filename}</summary>\n\t{file_diff}\n</details>')
-            files.append(rf'{filename}\n\t{file_diff}\n')
+            files.append(rf'\n<details>\n\t<summary>{filename}</summary>\n\t{file_diff}\n</details>')
+            # files.append(rf'{filename}\n\t{file_diff}\n')
     if files:
         files_text = '\n'.join(files)
         return rf'### Found Differences in the following files:\n{files_text}'

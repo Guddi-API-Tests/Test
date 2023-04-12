@@ -34,7 +34,7 @@ jobs:
         echo "message=$RESULT" >> $GITHUB_OUTPUT
         exit 1
     - name: Comment PR
-      uses: @v2
+      uses: mshick/add-pr-comment@v2
       if: ${{ steps.find_json_diff.outputs.message != 'None' }}
       with:
         message: ${{ steps.find_json_diff.outputs.message }}

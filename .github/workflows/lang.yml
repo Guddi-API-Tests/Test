@@ -29,15 +29,14 @@ jobs:
       run: gh pr checkout ${{ github.event.pull_request.number}}
     - name: Run Code-Generator
       run: | 
-        datamodel-codegen
-        changes=$(git diff --name-only)
-        number=$(echo "$changes" | wc -l)
-        if [[ $number -lt 2 ]]; then
-          echo "Git diff has less than 2 changes"
-          echo "Changes: $changes ($number)"
+        RESULT=$(python test.py)
+        echo "Python result:"
+        echo $RESULT
+        if [[ RESULT ]]; then
+          echo "Changes: $RESULT"
           echo "has_changes=false" >> $GITHUB_OUTPUT
         else
-          echo "Git diff has $number changes"
+          echo "Nothing Changed"
           echo "has_changes=true" >> $GITHUB_OUTPUT
         fi
     - name: Commit & Push Changes

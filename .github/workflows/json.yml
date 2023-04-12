@@ -29,6 +29,6 @@ jobs:
     - name: Check for differences
       id: find_json_diff
       run: | 
-        RESULT=$(python lang_file_diff.py)
+        RESULT=$(python lang_files_diff.py)
         echo "Python result: $RESULT"
         echo "are_the_same=$RESULT" >> $GITHUB_OUTPUT

@@ -31,17 +31,15 @@ jobs:
       id: run_code_gen
       run: | 
         RESULT=$(python datamodel.py)
-        echo "Python result:"
+        echo "Python result: $RESULT"
         echo $RESULT
         echo "has_changes=$RESULT" >> $GITHUB_OUTPUT
     - name: Commit & Push Changes
-#      if: ${{ steps.build.outputs.has_changes == 'true' }}
+      if: ${{ steps.run_code_gen.outputs.has_changes == 'True' }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo "this" 
-        echo ${{steps.run_code_gen.outputs.has_changes}}
-#        git config --global user.name 'Datamodel-Code-Generator'
-#        git config --global user.email 'your-username@users.noreply.github.com'
-#        git commit -am "datamodel-code-generator"
-#        git push
+        git config --global user.name 'Datamodel-Code-Generator'
+        git config --global user.email 'your-username@users.noreply.github.com'
+        git commit -am "datamodel-code-generator"
+        git push

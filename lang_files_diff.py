@@ -46,16 +46,19 @@ def main():
 
         if file_diff:
             file_diff = '\n'.join(file_diff)
-            files.append(f'\n<details>\n<summary>{filename}</summary>\n\n{file_diff}</details>')
+            files.append(f'<br>\n<details>\n<summary>{filename}</summary>\n\n{file_diff}</details>\n')
 
     if files:
         files_text = '\n'.join(files)
         with open('comment.md', 'w+') as f:
-            f.write(f'#### Found Differences in the following files:\n{files_text}')
+            f.write(f'### Found Differences in the following language files:\n\n'
+                    f'Checked Folder: [{folder_path}]({folder_path})  \n'
+                    f'Original File: [{os.path.basename(original_file_path)}]({original_file_path})\n'
+                    f'\n{files_text}')
         return False
     else:
         with open('comment.md', 'w+') as f:
-            f.write(f'#### All language files are the same 😃')
+            f.write(f'### All language files are the same 😃')
         return True
 
 

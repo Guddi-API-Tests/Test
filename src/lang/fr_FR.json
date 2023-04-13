@@ -1,0 +1,372 @@
+{
+    "langCode": "fr_FR",
+    "langName": "France",
+    "commands": {
+        "help": {
+            "name": "hilfe",
+            "description": "Erhalte Hilfe zum Bot",
+            "replyEmbed": {
+                "title": "{bot.user.name} - Hilfe",
+                "description": "Danke dass du {bot.user.name} benutzt!\nWähle im Menü unten eine Funktion aus um fortzufahren.\n\nDu möchtest bestimmte Funktionen haben? Dann schlag es beim Support-Server einfach vor!\n\n__Nützliche Links:__\n[Lade mich ein!]({bot.bot_invite})\n[Support Server]({bot.support_invite})\n\n__Unsere Partner__:\nTritt unserem [Netzwerk Server](https://discord.gg/Ks3szzP) bei!\nLade den Bot [GZ Global](https://discord.com/api/oauth2/authorize?client_id=702535364325146645&permissions=8&scope=bot%20applications.commands) ein."
+            },
+            "misc": {
+                "thing": "thing",
+                "this": "lul",
+                "that": "lel"
+            }
+        },
+        "info": {
+            "name": "information",
+            "description": "Alle wichtigen Infos über den Bot.",
+            "something": "whatever",
+            "replyEmbed": {
+                "title": "Informationen über {bot.user.name}",
+                "description": "Mit {bot.user.name} könnt ihr das Banner-System für den aktivsten User auch auf eurem Server verwenden.",
+                "fields": [
+                    {
+                        "name":"Entwickler",
+                        "value": "{dev_team}",
+                        "inline": false
+                    }, {
+                        "name": "System Infos",
+                        "value": "Platform Name: `{system_name}`\nPython Version: `{python_version}`\ndiscord.py Version: `{discord_version}`",
+                        "inline": false
+                    }, {
+                        "name": "Ping",
+                        "value": "{bot_ping}ms",
+                        "inline": false
+                    }
+                ]
+            }
+        },
+        "invite": {
+            "name": "einladen",
+            "description": "Lade den Bot ein.",
+            "replyEmbed": {
+                "title": "Einladungen",
+                "description": "[Bot einladen (Admin Rechte)]({admin_invite})\n[Bot einladen (Perms Auswählen)]({needed_invite})\n[Unser Discord Server]({bot.support_invite})"
+            }
+        },
+        "banner": {
+            "name": "banner",
+            "description": "Verwalte das 'Aktivster-User' System mit Server Banner"
+        },
+        "banner_settings": {
+            "name": "einstellungen",
+            "description": "Zeigt die aktuellen Einstellungen des Servers zum Banner System.",
+            "replyNoGuildData": "Es wurden noch keine Einstellungen vorgenommen.",
+            "replyEmbed": {
+                "title": "Einstellungen zum Banner System",
+                "description": "System ist **{active_or_not}**\nBanner Anzeige: {show_banner}\nAktivster-User Rolle: {activity_role}\nBanner-Hintergrund: {banner_background} {without_text}"
+            },
+            "misc": {
+                "activated": "aktiviert",
+                "deactivated": "deaktiviert",
+                "guild_banner": "**Server Banner**",
+                "not_set": "*Nicht festgelegt*",
+                "custom_background": "*Eigener Hintergrund*",
+                "old_image": "*Altes Bild*",
+                "without_text": "*ohne Text*",
+                "roles": "Rollen:",
+                "channels": "Kanäle:",
+                "blacklist": "Blacklist:"
+            }
+        },
+        "banner_activate": {
+            "name": "aktivieren",
+            "description": "Aktiviere das Banner System!",
+            "args": {
+                "display": {
+                    "name": "anzeige",
+                    "description": "Wo soll der Banner angezeigt werden?",
+                    "option_1": "im Text Channel",
+                    "option_2": "als Serverbanner (wenn Verfügbar)"
+                }
+            },
+            "replyAlreadyActivated": "Das System ist bereits aktiviert.",
+            "replySuccess": "Das System wurde aktiviert!",
+            "replyTextChannel": "Das Banner wird in {channel.mention} gesendet.",
+            "replyNoBanner": "Da der Server nicht berechtigt ist einen Server-Banner zu haben wird das Banner in {channel.mention} gesendet."
+        },
+        "banner_deactivate": {
+            "name": "deaktivieren",
+            "description": "Deaktiviere das Banner System.",
+            "args": {
+                "delete": {
+                    "name": "löschen",
+                    "description": "Alle Daten/Settings zum Banner werden unwiderruflich gelöscht"
+                }
+            },
+            "replyAlreadyDeactivated": "Das System ist bereits deaktiviert.",
+            "replySuccess": "Das System wurde deaktiviert.",
+            "replySuccessDelete": "Das System wurde deaktiviert und alle Daten/Settings gelöscht."
+        },
+        "banner_role": {
+            "name": "rolle",
+            "description": "Lege eine Rolle für den aktivsten User fest. (Optional)",
+            "args": {
+                "role": {
+                    "name": "festlegen",
+                    "description": "Die Rolle welche an den aktivsten User vergeben wird"
+                },
+                "remove": {
+                    "name": "entfernen",
+                    "description": "Es wird keine Rolle an den aktivsten User vergeben"
+                }
+            },
+            "errorToManyArgs": "Was willst du machen? Gib nur EINES der beiden Argumente an.",
+            "errorRoleAlreadySet": "{role.mention} ist bereits die festgelegte Rolle.",
+            "errorCantManageRole": "Ich kann die Rolle {role.mention} nicht verwalten.",
+            "errorUnexpected": "Unexpected Exception. Versuchs nochmal!",
+            "replySet": "Ab jetzt wird {role.mention} an den aktivsten User vergeben.",
+            "replyRemoved": "Es wird keine rolle mehr vergeben."
+        },
+        "banner_timerange": {
+            "name": "zeitspanne",
+            "description": "Lege die Zeitspanne auf täglich oder stündlich fest.",
+            "args": {
+                "time_range": {
+                    "name": "zeitspanne",
+                    "description": "Zählt Nachrichten der letzten Stunde oder des letzten Tages"
+                }
+            },
+            "replyIsAlreadySet": "Die Zeitspanne ist bereits auf {time_range} eingestellt.",
+            "replySuccess": "Die Zeitspanne wurde auf {time_range} gesetzt."
+        },
+        "banner_colors": {
+            "name": "farben",
+            "description": "Wähle eine Farbe aus. (CSS4 Name, Hex-Code, RGB-Value)"
+        },
+        "banner_colors_customize": {
+            "name": "anpassen",
+            "description": "Wähle eine Farbe aus. (CSS4 Name, Hex-Code, RGB-Value).",
+            "args": {
+                "title": {
+                    "name": "titel",
+                    "description": "Der Text: 'Aktivster user ...'"
+                },
+                "username": {
+                    "name": "username",
+                    "description": "Der Benutzername des Users"
+                },
+                "discriminator": {
+                    "name": "discriminator",
+                    "description": "Der Discord Tag des Users"
+                }
+            },
+            "replyNoOption": "Du musst mindestens eine Option angeben.",
+            "replyChange": "Die Farbe wurde angepasst: {changed}",
+            "replyChanges": "Die Farben wurden angepasst: {changed}"
+        },
+        "banner_colors_reset": {
+            "name": "zurücksetzen",
+            "description": "Setze alle Farben zurück auf den Standartwert. Kann nicht rückgängig gemacht werden.",
+            "reply": "Die Farben wurden zurückgesetzt."
+        },
+        "banner_fonts": {
+            "name": "schriftart",
+            "description": "Wähle eine Schriftart für dein Banner aus"
+        },
+        "banner_fonts_upload": {
+            "name": "hochladen",
+            "description": "Lade die Schriftart hoch, welche für diesen Server verwendet werden soll.",
+            "args": {
+                "font_file": {
+                    "name": "datei",
+                    "description": "..."
+                }
+            },
+            "errorWrongFileFormat": "Es sind nur Schriftarten der folgenden Formate erlaubt:\n{allowed_extensions}",
+            "replySuccess": "Die Schriftart wurde hochgeladen."
+        },
+        "banner_fonts_reset": {
+            "name": "zurücksetzen",
+            "description": "Setze die Schriftart zurück. Kann nicht rückgängig gemacht werden.",
+            "replyNoFontUploaded": "Es wurde keine eigene Schriftart hochgeladen.",
+            "replySuccess": "Die Schriftart wurde zurückgesetzt."
+        },
+        "banner_background": {
+            "name": "hintergrund",
+            "description": "Lege das Hintergrundbild fest!"
+        },
+        "banner_background_selection": {
+            "name": "auswahl",
+            "description": "Wähle aus einer Liste an Bildern den Hintergrund aus.",
+            "args": {
+                "image": {
+                    "name": "bild",
+                    "description": "Jede Nummer steht für ein anderes Bild"
+                }
+            },
+            "replyRemovedUploadedImage": "Das Hochgeladene Bild wurde entfernt."
+        },
+        "banner_background_upload": {
+            "name": "hochladen",
+            "description": "Lade ein eigenes Hintergrundbild hoch.",
+            "args": {
+                "image": {
+                    "name": "bild",
+                    "description": "(16:9) Mindestens 960x540px"
+                }
+            },
+            "errorWrongFileFormat": "Es sind nur Bilder der folgenden Formate erlaubt.\n{allowed_extensions}",
+            "errorInvalidAspectRatio": "Das Bilds braucht ein Seitenverhältnis von **`16:9`**.",
+            "errorImageSizeToSmall": "Das Bilds muss mindestens **`{minimum_pixel_str}`** Pixel groß sein.",
+            "replySuccess": "Das Bild `{image.filename}` wurde hochgeladen.",
+            "replyQuestion": "Soll der Text 'Aktivster User ...' im Banner angezeigt werden?\nDadurch kannst du den Text selber gestalten."
+        },
+        "banner_blacklist": {
+            "name": "blacklist",
+            "description": "Verwalte die Blacklist des Systems"
+        },
+        "banner_blacklist_add": {
+            "name": "hinzufügen",
+            "description": "Füge Channel oder Rollen zur Blacklist hinzu.",
+            "args": {
+                "role": {
+                    "name": "rolle",
+                    "description": "Usern mit dieser Rolle werden bei der Auswertung des aktivsten Users nicht berücksichtigt"
+                },
+                "channel": {
+                    "name": "kanal",
+                    "description": "In diesem Kanal (oder in Threads des Kanals) werden keine Nachrichten gezählt"
+                }
+            },
+            "errorNoOptions": "Du musst mindestens eine Rolle oder einen Channel angeben.",
+            "errorAlreadyBlacklisted": "{0.mention} steht bereits auf der Blacklist.",
+            "replySuccess": "{0.mention} wurde zur Blacklist hinzugefügt."
+        },
+        "banner_blacklist_remove": {
+            "name": "entfernen",
+            "description": "Entferne Channel oder Rollen von der Blacklist.",
+            "args": {
+                "role": {
+                    "name": "rolle",
+                    "description": "User mit dieser Rolle werden wieder bei der Auswertung berücksichtigt"
+                },
+                "channel": {
+                    "name": "kanal",
+                    "description": "Neue Nachrichten in diesem Kanal (oder in Threads des Kanals) werden wieder gezählt"
+                },
+                "clear": {
+                    "name": "löschen",
+                    "description": "Löscht alle Einträge in der Blacklist"
+                }
+            },
+            "errorNoOptions": "Du musst mindestens eine Option angeben.",
+            "errorAllOptions": "Was willst du machen? Gib entweder Rolle/Kanal oder Löschen an.",
+            "errorAlreadyBlacklisted": "{0.mention} steht bereits auf der Blacklist.",
+            "replyClear": "Die Blacklist wurde geleert.",
+            "replySuccess": "{0.mention} wurde von der Blacklist entfernt."
+        },
+        "tempchannel": {
+            "name": "tempchannel",
+            "description": "Verwalte das 'Temp-Channel' System"
+        },
+        "tempchannel_settings": {
+            "name": "einstellungen",
+            "description": "Zeigt die aktuellen Einstellungen des Servers zum Tempchannel System.",
+            "replyEmbed": {
+                "title": "Einstellungen zum Tempchannel System",
+                "description": "System ist **{active_or_not}**"
+            },
+            "misc": {
+                "activated": "aktiviert",
+                "deactivated": "deaktiviert",
+                "no_hubs": "*Keine festgelegt*",
+                "no_temps": "*Keine vorhanden*",
+                "set_hubs": "Festgelegte Hubs:",
+                "current_temps": "Aktuelle Channels:"
+            },
+            "errorNoAdminPerms": "⚠ Der Bot hat aktuell keine Administrator Rechte.\nDamit das Tempchannel System einwandfrei funktioniert, benötigt der Bot mindestens folgende Rechte auf dem Server und in den entsprechenden Kanälen:\n\n- Kanäle anzeigen\n- Kanäle verwalten\n- Rollen verwalten\n- Verbinden\n- Mitglieder verschieben\n\n**Empfohlene Rechte:** `Administrator`"
+        },
+        "tempchannel_add": {
+            "name": "hinzufügen",
+            "description": "Füge einen Temp-Channel hinzu.",
+            "args": {
+                "channel": {
+                    "name": "kanal",
+                    "description": "Dieser Voice-channel wird zu einem Temp-channel."
+                }
+            },
+            "reply": "Der Kanal {channel.mention} ist nun ein Tempchannel.",
+            "errorIsHub": "Der Kanal {channel.mention} ist bereits ein JoinHub.",
+            "errorIsTemp": "Der Kanal {channel.mention} ist bereits ein Tempchannel.\nTempchannels können nicht als JoinHub festgelegt werden.",
+            "errorNoAdminPerms": "⚠ Der Bot hat aktuell keine Administrator Rechte.\nDamit das Tempchannel System einwandfrei funktioniert, benötigt der Bot mindestens folgende Rechte auf dem Server und in den entsprechenden Kanälen:\n\n- Kanäle anzeigen\n- Kanäle verwalten\n- Rollen verwalten\n- Verbinden\n- Mitglieder verschieben\n\n**Empfohlene Rechte:** `Administrator`"
+        },
+        "tempchannel_remove": {
+            "name": "entfernen",
+            "description": "Entferne einen Temp-Channel",
+            "args": {
+                "channel": {
+                    "name": "kanal",
+                    "description": "Der Voice-Channel wird kein Temp-Channel mehr sein."
+                },
+                "delete": {
+                    "name": "löschen",
+                    "description": "Alle Daten/Einstellungen zum Temp-Channel System werden gelöscht"
+                }
+            },
+            "reply": "Der Kanal {channel.mention} ist nun kein Tempchannel mehr.",
+            "replyDeleted": "Die Temp-Channels wurden geleert.",
+            "errorNotTemp": "Der Kanal {channel.mention} ist kein Temp-Channel.",
+            "errorNoOption": "Du musst mindestens eine Option angeben."
+        },
+        "tempchannel_options": {
+            "name": "optionen",
+            "description": "Einstellungen für JoinHubs"
+        },
+        "tempchannel_options_name": {
+            "name": "name",
+            "description": "Lege einen benutzerdefinierten Namen für neue Tempchannels fest.",
+            "args": {
+                "channel": {
+                    "name": "kanal",
+                    "description": "Der Join-Hub für den die Einstellung gilt."
+                },
+                "name": {
+                    "name": "name",
+                    "description": "Standardmäßiger Name für Tempchannels, {username} für den Namen des Users."
+                }
+            },
+            "reply": "Der Name für Tempchannels vom {channel.mention} JoinHub wurde erfolgreich auf `{name}` gesetzt.",
+            "errorNoHubsSet": "Es sind keine Tempchannel-Hubs festgelegt.",
+            "errorNameToLong": "Der Name darf nicht länger als 100 Zeichen sein.",
+            "errorUnknownOption": "Es wurde kein gültiger Tempchannel-Hub ausgewählt."
+        }
+    },
+    "context_menus": {
+        "activity_check_member": {
+            "name": "Aktivität",
+            "replyAuthorCount": "Du hast derzeit **{count_author}** Nachrichten!",
+            "replyMemberCount": "{member.mention} hat derzeit **{count_member}** {plural_msg_count}!\n",
+            "replyAuthorLeads": "-> {member.mention} liegt **{difference}** {plural_msg_dif} hinter dir.",
+            "replyMemberLeads": "-> {member.mention} hat **{difference}** {plural_msg_dif} mehr als du.",
+            "replyDraw": "-> Gleichstand",
+            "reply": "",
+            "errorNoBots": "Bots sind vom System ausgenommen.",
+            "misc": {
+                "message": "Nachricht",
+                "messages": "Nachrichten"
+            }
+        }
+    },
+    "functions": {
+        "banner": {
+            "title": "Aktivster User",
+            "title_hourly": "der Stunde",
+            "title_daily": "des Tages"
+        },
+        "tempchannel": {
+            "channelEmpty": "Tempchannel leer",
+            "replyEmbedError": {
+                "title": "Tempchannel System Fehler",
+                "description": "Auf dem Server **{guild.name}** fehlen dem Bot benötigte Rechte für das Tempchannel System.\nDer Bot benötigt mindestens folgende Rechte auf dem Server und in den entsprechenden Kanälen:\n\n- Kanäle anzeigen\n- Kanäle verwalten\n- Rollen verwalten\n- Verbinden\n- Mitglieder verschieben\n\n**Empfohlene Rechte:** ``Administrator``"
+            }
+        }
+    },
+    "choices": {
+        "banner_activate_display_text": "im Text Channel",
+        "banner_activate_display_banner": "als Serverbanner (wenn Verfügbar)"
+    }
+}

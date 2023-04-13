@@ -16,7 +16,7 @@ def format_keys(value: deepdiff.model.PrettyOrderedSet) -> str:
     for item in value.items:
         keys = pattern.findall(item)
         items.append('"' + '.'.join(keys) + '"')
-    return r'<br>        ' + r'<br>        '.join(items)
+    return '\n\t\t' + '\n\t\t'.join(items)
 
 
 def main():
@@ -43,14 +43,18 @@ def main():
         for key, value in diff.items():
             file_diff.append(f'{key}: {format_keys(value)}')
         if file_diff:
-            file_diff = r'<br>    '.join(file_diff)
-            files.append(rf'<br><details><br>    <summary>{filename}</summary><br>    {file_diff}<br></details>')
-            # files.append(rf'{filename}\n\t{file_diff}\n')
+            file_diff = '\n\t'.join(file_diff)
+            files.append(f'\n<details>\n\t<summary>{filename}</summary>\n\t{file_diff}\n</details>')
+            # files.append(f'{filename}\n\t{file_diff}\n')
     if files:
         files_text = '\n'.join(files)
-        return rf'### Found Differences in the following files:<br>{files_text}'
+        with open('comment.txt', 'w+') as f:
+            f.write(f'#### Found Differences in the following files:\n{files_text}')
+        return False
     else:
-        return None
+        with open('comment.txt', 'w+') as f:
+            f.write(f'#### All language files are the same :D')
+        return True
 
 
 if __name__ == '__main__':

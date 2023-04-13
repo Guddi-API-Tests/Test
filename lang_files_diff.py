@@ -50,15 +50,15 @@ def main():
 
     if files:
         files_text = '<br>\n'.join(files)
-        with open('comment.md', 'w+') as f:
+        with open('comment.md', 'w+', encoding='utf-8') as f:
             f.write(f'### Found Differences in the following language files:\n\n'
                     # f'Checked Folder: [{folder_path}]({folder_path})  \n'
                     # f'Original File: [{os.path.basename(original_file_path)}]({original_file_path})\n'
-                    f'\n{files_text}')
+                    f'\n{files_text}\n<br>*check failed*')
             raise Exception('Some language files are different')
     else:
-        with open('comment.md', 'w+') as f:
-            f.write(f'### All language files are the same 😃')
+        with open('comment.md', 'w+', encoding='utf-8') as f:
+            f.write(f'### All language files are the same 😃\n\n<br>*check passed*')
         return True
 
 

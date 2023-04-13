@@ -48,11 +48,11 @@ def main():
             # files.append(f'{filename}\n\t{file_diff}\n')
     if files:
         files_text = '\n'.join(files)
-        with open('comment.txt', 'w+') as f:
+        with open('comment.md', 'w+') as f:
             f.write(f'#### Found Differences in the following files:\n{files_text}')
         return False
     else:
-        with open('comment.txt', 'w+') as f:
+        with open('comment.md', 'w+') as f:
             f.write(f'#### All language files are the same :D')
         return True
 

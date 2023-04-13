@@ -55,7 +55,7 @@ def main():
                     # f'Checked Folder: [{folder_path}]({folder_path})  \n'
                     # f'Original File: [{os.path.basename(original_file_path)}]({original_file_path})\n'
                     f'\n{files_text}')
-        return False
+            raise Exception('Some language files are different')
     else:
         with open('comment.md', 'w+') as f:
             f.write(f'### All language files are the same 😃')

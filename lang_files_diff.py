@@ -52,8 +52,8 @@ def main():
         files_text = '\n'.join(files)
         with open('comment.md', 'w+') as f:
             f.write(f'### Found Differences in the following language files:\n\n'
-                    f'Checked Folder: [{folder_path}]({folder_path})  \n'
-                    f'Original File: [{os.path.basename(original_file_path)}]({original_file_path})\n'
+                    # f'Checked Folder: [{folder_path}]({folder_path})  \n'
+                    # f'Original File: [{os.path.basename(original_file_path)}]({original_file_path})\n'
                     f'\n{files_text}')
         return False
     else:

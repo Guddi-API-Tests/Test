@@ -3,6 +3,7 @@
     "langName": "English",
     "commands": {
         "help": {
+            "name": "hilfe",
             "description": "Erhalte Hilfe zum Bot",
             "replyEmbed": {
                 "title": "{bot.user.name} - Hilfe",
@@ -11,9 +12,7 @@
             "misc": {
                 "thing": "thing",
                 "this": "lul",
-                "that": "lel",
-                "what": "what",
-                "where": "where"
+                "that": "lel"
             }
         },
         "info": {

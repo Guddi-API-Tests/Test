@@ -46,10 +46,10 @@ def main():
 
         if file_diff:
             file_diff = '\n'.join(file_diff)
-            files.append(f'<br>\n<details>\n<summary>{filename}</summary>\n\n{file_diff}</details>\n')
+            files.append(f'<details>\n<summary>{filename}</summary>\n\n{file_diff}</details>\n')
 
     if files:
-        files_text = '\n'.join(files)
+        files_text = '<br>\n'.join(files)
         with open('comment.md', 'w+') as f:
             f.write(f'### Found Differences in the following language files:\n\n'
                     # f'Checked Folder: [{folder_path}]({folder_path})  \n'

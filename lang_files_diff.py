@@ -15,8 +15,8 @@ def format_keys(value: deepdiff.model.PrettyOrderedSet) -> str:
     items = []
     for item in value.items:
         keys = pattern.findall(item)
-        items.append('"' + '.'.join(keys) + '"')
-    return '\n\t\t' + '\n\t\t'.join(items)
+        items.append('  - `' + '.'.join(keys) + '`')
+    return '\n'.join(items)
 
 
 def main():
@@ -41,11 +41,13 @@ def main():
         diff = deepdiff.DeepDiff(original_json, compare_json, ignore_order=True, verbose_level=0)
         file_diff = []
         for key, value in diff.items():
-            file_diff.append(f'{key}: {format_keys(value)}')
+            formatted_values = format_keys(value)
+            file_diff.append(f'- **{key}:**\n{formatted_values}\n\n')
+
         if file_diff:
-            file_diff = '\n\t'.join(file_diff)
-            files.append(f'\n<details>\n\t<summary>{filename}</summary>\n\t{file_diff}\n</details>')
-            # files.append(f'{filename}\n\t{file_diff}\n')
+            file_diff = '\n'.join(file_diff)
+            files.append(f'\n<details>\n<summary>{filename}</summary>\n\n{file_diff}</details>')
+
     if files:
         files_text = '\n'.join(files)
         with open('comment.md', 'w+') as f:
@@ -53,7 +55,7 @@ def main():
         return False
     else:
         with open('comment.md', 'w+') as f:
-            f.write(f'#### All language files are the same :D')
+            f.write(f'#### All language files are the same 😃')
         return True
 
 

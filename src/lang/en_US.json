@@ -24,14 +24,16 @@
                 "description": "Mit {bot.user.name} könnt ihr das Banner-System für den aktivsten User auch auf eurem Server verwenden.",
                 "fields": [
                     {
-                        "name":"Entwickler",
+                        "name": "Entwickler",
                         "value": "{dev_team}",
                         "inline": false
-                    }, {
+                    },
+                    {
                         "name": "System Infos",
                         "value": "Platform Name: `{system_name}`\nPython Version: `{python_version}`\ndiscord.py Version: `{discord_version}`",
                         "inline": false
-                    }, {
+                    },
+                    {
                         "name": "Ping",
                         "value": "{bot_ping}ms",
                         "inline": false

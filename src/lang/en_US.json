@@ -3,10 +3,10 @@
     "langName": "English",
     "commands": {
         "help": {
-            "name": "hilfe",
-            "description": "Erhalte Hilfe zum Bot",
+            "name": "help",
+            "description": "Get help about the Bot",
             "replyEmbed": {
-                "title": "{bot.user.name} - Hilfe",
+                "title": "{bot.user.name} - Help",
                 "description": "Danke dass du {bot.user.name} benutzt!\nWähle im Menü unten eine Funktion aus um fortzufahren.\n\nDu möchtest bestimmte Funktionen haben? Dann schlag es beim Support-Server einfach vor!\n\n__Nützliche Links:__\n[Lade mich ein!]({bot.bot_invite})\n[Support Server]({bot.support_invite})\n\n__Unsere Partner__:\nTritt unserem [Netzwerk Server](https://discord.gg/Ks3szzP) bei!\nLade den Bot [GZ Global](https://discord.com/api/oauth2/authorize?client_id=702535364325146645&permissions=8&scope=bot%20applications.commands) ein."
             },
             "misc": {
@@ -16,22 +16,24 @@
             }
         },
         "info": {
-            "name": "information",
-            "description": "Alle wichtigen Infos über den Bot.",
+            "name": "infromation",
+            "description": "All important information about the bot.",
             "something": "whatever",
             "replyEmbed": {
-                "title": "Informationen über {bot.user.name}",
-                "description": "Mit {bot.user.name} könnt ihr das Banner-System für den aktivsten User auch auf eurem Server verwenden.",
+                "title": "Information about {bot.user.name}",
+                "description": "With {bot.user.name} you can use the Banner-System for the most active user.",
                 "fields": [
                     {
-                        "name":"Entwickler",
+                        "name": "Developers",
                         "value": "{dev_team}",
                         "inline": false
-                    }, {
-                        "name": "System Infos",
-                        "value": "Platform Name: `{system_name}`\nPython Version: `{python_version}`\ndiscord.py Version: `{discord_version}`",
+                    },
+                    {
+                        "name": "System Information",
+                        "value": "Platform name: `{system_name}`\nPython version: `{python_version}`\ndiscord.py version: `{discord_version}`",
                         "inline": false
-                    }, {
+                    },
+                    {
                         "name": "Ping",
                         "value": "{bot_ping}ms",
                         "inline": false
@@ -40,56 +42,56 @@
             }
         },
         "invite": {
-            "name": "einladen",
-            "description": "Lade den Bot ein.",
+            "name": "invite",
+            "description": "Invite the Bot.",
             "replyEmbed": {
-                "title": "Einladungen",
-                "description": "[Bot einladen (Admin Rechte)]({admin_invite})\n[Bot einladen (Perms Auswählen)]({needed_invite})\n[Unser Discord Server]({bot.support_invite})"
+                "title": "Invitations",
+                "description": "[Invite Bot(Admin Perms)]({admin_invite})\n[Invite Bot(Choose Perms)]({needed_invite})\n[Our Discord Server]({bot.support_invite})"
             }
         },
         "banner": {
             "name": "banner",
-            "description": "Verwalte das 'Aktivster-User' System mit Server Banner"
+            "description": "Manage the 'most-active-user' System with guild banner"
         },
         "banner_settings": {
-            "name": "einstellungen",
-            "description": "Zeigt die aktuellen Einstellungen des Servers zum Banner System.",
-            "replyNoGuildData": "Es wurden noch keine Einstellungen vorgenommen.",
+            "name": "settings",
+            "description": "Show the current settings for this guild.",
+            "replyNoGuildData": "No changes were made.",
             "replyEmbed": {
-                "title": "Einstellungen zum Banner System",
-                "description": "System ist **{active_or_not}**\nBanner Anzeige: {show_banner}\nAktivster-User Rolle: {activity_role}\nBanner-Hintergrund: {banner_background} {without_text}"
+                "title": "Settings for the banner system",
+                "description": "System is **{active_or_not}**\nBanner display: {show_banner}\nMost-active-user role: {activity_role}\nBanner background: {banner_background} {without_text}"
             },
             "misc": {
-                "activated": "aktiviert",
-                "deactivated": "deaktiviert",
-                "guild_banner": "**Server Banner**",
-                "not_set": "*Nicht festgelegt*",
-                "custom_background": "*Eigener Hintergrund*",
-                "old_image": "*Altes Bild*",
-                "without_text": "*ohne Text*",
-                "roles": "Rollen:",
-                "channels": "Kanäle:",
+                "activated": "activated",
+                "deactivated": "deactivated",
+                "guild_banner": "**Guild banner**",
+                "not_set": "*Not set*",
+                "custom_background": "*Custom Background*",
+                "old_image": "*Old Image*",
+                "without_text": "*without Text*",
+                "roles": "Roles:",
+                "channels": "Channels:",
                 "blacklist": "Blacklist:"
             }
         },
         "banner_activate": {
-            "name": "aktivieren",
-            "description": "Aktiviere das Banner System!",
+            "name": "activate",
+            "description": "Activate the banner system!",
             "args": {
                 "display": {
-                    "name": "anzeige",
-                    "description": "Wo soll der Banner angezeigt werden?",
-                    "option_1": "im Text Channel",
-                    "option_2": "als Serverbanner (wenn Verfügbar)"
+                    "name": "display",
+                    "description": "Where should the banner be displayed?",
+                    "option_1": "in a text channel",
+                    "option_2": "as guild banner (if possible)"
                 }
             },
-            "replyAlreadyActivated": "Das System ist bereits aktiviert.",
-            "replySuccess": "Das System wurde aktiviert!",
-            "replyTextChannel": "Das Banner wird in {channel.mention} gesendet.",
+            "replyAlreadyActivated": "The system is already active.",
+            "replySuccess": "The system was activated!",
+            "replyTextChannel": "The banner will be sent to {channel.mention}.",
             "replyNoBanner": "Da der Server nicht berechtigt ist einen Server-Banner zu haben wird das Banner in {channel.mention} gesendet."
         },
         "banner_deactivate": {
-            "name": "deaktivieren",
+            "name": "deactivate",
             "description": "Deaktiviere das Banner System.",
             "args": {
                 "delete": {
